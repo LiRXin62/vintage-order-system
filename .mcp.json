@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "vintage-db-readonly": {
+      "command": "node",
+      "args": [
+        ".mcp-servers/vintage-db-readonly/dist/index.js"
+      ]
+    },
+    "vintage-redis": {
+      "command": "node",
+      "args": [
+        ".mcp-servers/vintage-redis/dist/index.js"
+      ]
+    }
+  }
+}

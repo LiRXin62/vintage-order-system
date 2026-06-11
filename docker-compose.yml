@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: vintage-order-system
+    ports:
+      - "8081:80"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://8.136.194.199:3306/vintage_order?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8mb4_general_ci&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=LiRXin_Mysql57_0620
+      - SPRING_DATA_REDIS_HOST=8.136.194.199
+      - SPRING_DATA_REDIS_PORT=6379
+      - SPRING_DATA_REDIS_PASSWORD=LiRXin_Redis_0620
+      - SPRING_DATA_REDIS_DATABASE=2
+    restart: unless-stopped
+    volumes:
+      - ./logs:/app/logs
+      - ./uploadPath:/app/uploadPath
